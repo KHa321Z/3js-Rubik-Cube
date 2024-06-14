@@ -339,41 +339,41 @@ window.addEventListener("resize", onWindowResize, false);
 
 function init () {
 
-canvas = document.getElementById("myCanvas");
-canvas.width = devicePixelRatio * canvas.clientWidth;
-canvas.height = devicePixelRatio * canvas.clientHeight;
+    canvas = document.getElementById("myCanvas");
+    canvas.width = devicePixelRatio * canvas.clientWidth;
+    canvas.height = devicePixelRatio * canvas.clientHeight;
 
-// Something like a Canvas for WebGl to render
-renderer = new THREE.WebGLRenderer({ 
-    canvas: canvas, 
-    antialiases: true
-});
-renderer.setClearColor(0xDDDDDD, 1);
-renderer.setPixelRatio(devicePixelRatio);
+    // Something like a Canvas for WebGl to render
+    renderer = new THREE.WebGLRenderer({ 
+        canvas: canvas, 
+        antialiases: true
+    });
+    renderer.setClearColor(0xDDDDDD, 1);
+    renderer.setPixelRatio(devicePixelRatio);
 
-// The Film or Scene in literal sense
-scene = new THREE.Scene();
+    // The Film or Scene in literal sense
+    scene = new THREE.Scene();
 
-// POV
-camera = new THREE.PerspectiveCamera(70, canvas.width/canvas.height);
-camera.position.set(0, 0, 50);
-scene.add(camera);
+    // POV
+    camera = new THREE.PerspectiveCamera(70, canvas.width/canvas.height);
+    camera.position.set(0, 0, 50);
+    scene.add(camera);
 
-// Clock
-clock = new THREE.Clock();
+    // Clock
+    clock = new THREE.Clock();
 
-// Controls
-controls = new THREE.TrackballControls(camera, renderer.domElement);
-controls.target = new THREE.Vector3(0, 0, 0);
-controls.rotateSpeed = 2.0;
-controls.noZoom = true;
-controls.noPan = true;
-controls.noRotate = true;
+    // Controls
+    controls = new THREE.TrackballControls(camera, renderer.domElement);
+    controls.target = new THREE.Vector3(0, 0, 0);
+    controls.rotateSpeed = 2.0;
+    controls.noZoom = true;
+    controls.noPan = true;
+    controls.noRotate = true;
 
-camera.position.y = 15;
+    camera.position.y = 15;
 
-// Drawing the Cube
-rubikCube.drawCube();
+    // Drawing the Cube
+    rubikCube.drawCube();
 
 };
 
